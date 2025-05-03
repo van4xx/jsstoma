@@ -2,6 +2,7 @@ services:
   - type: web
     name: jsstoma-api
     env: node
+    plan: free
     buildCommand: npm install
     startCommand: npm run start
     envVars:
@@ -12,11 +13,11 @@ services:
       - key: JWT_SECRET
         sync: false
     
-  - type: web
+  - type: static
     name: jsstoma-client
-    env: static
+    plan: free
     buildCommand: cd client && npm install && npm run build
-    staticPublishPath: ./client/build
+    publishDir: ./client/build
     routes:
       - type: rewrite
         source: /*
