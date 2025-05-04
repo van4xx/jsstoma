@@ -7,7 +7,7 @@ const Product = require('../models/Product');
 const Price = require('../models/Price');
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
